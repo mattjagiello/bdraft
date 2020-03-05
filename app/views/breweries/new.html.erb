@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/analytics.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="brewery_new_header">
+<h1>Add a new brewery</h1>
+
+
+<ul>
+<% @brewery.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+
+<div class="brewery_new">
+<%= form_for @brewery do |f| %>
+Name: <%= f.text_field :name %><br><br>
+Address: <%= f.text_field :address %><br><br>
+City: <%= f.text_field :city %><br><br>
+ZIP Code: <%= f.text_field :zip_code %><br>
+<%= f.submit "Add Brewery" %>
+<% end %>
+</div>
+</body>

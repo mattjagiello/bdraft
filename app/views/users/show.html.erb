@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/user_show.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="user_header">
+<% if current_user == @user %>
+  <h3><%= @user.username.capitalize %>'s Beer Collection</h3>
+<% end %>
+</div>
+
+<div class="reviewed_beers">
+<b>Reviewed Beers:</b>
+<% user_reviews = Review.where(user_id: @user)%>
+<% beer_ids = user_reviews.select(:beer_id).distinct %>
+<ul>
+<% beer_ids.each do |beer| %>
+<% beer = Beer.find_by(id: beer.beer_id) %>
+<li><%= link_to beer.name, beer_path(beer) %></li>
+<% end %>
+</ul>
+</div>
+
+<div class="tracked_beers">
+<b>Tracked Beers:</b>
+<% user_reviews = Review.where(user_id: @user) %>
+<ul>
+<% tracked_reviews = user_reviews.select {|x| x.tracked == true} %>
+<% tracked_reviews.each do |review| %>
+<% beer = Beer.find_by(id: review.beer_id) %>
+<li><%= link_to beer.name, beer_path(beer) %></li>
+<% end %>
+</ul>
+</div>
+
+<div class="new_review">
+Write a new review:
+<%= button_to "New Review", new_review_path, method: :get %>
+</div>
+<br>
+<div class="user_links">
+Check out all the beers:
+<%= link_to "Beers", beers_path %> <br><br>
+
+Check out all the breweries:
+<%= link_to "Breweries", breweries_path %> <br><br>
+</div>
+
+<% if logged_in? %>
+    <%= button_to "Logout", root_path, method: :get %>
+<% else %>
+    <%= button_to "Login Page", login_path, method: :get %>
+<% end %>
+
+</body>

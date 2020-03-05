@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/review.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="review_header">
+<h1>Write a new review:</h1>
+
+<ul>
+<% @review.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+
+<div class="new_review">
+<%= form_for @review do |f| %>
+Enter review content:
+<br>
+<%= f.text_area :content %>
+<br><br>
+Select a beer:<br>
+<%= f.collection_select(:beer_id, Beer.all, :id, :name) %>
+<br><br>
+Select a user:<br>
+<%= f.collection_select(:user_id, User.all, :id, :username) %>
+<br><br>
+Enter a beer rating (1 to 5):<br>
+<%= number_field(:review, :rating, in: 1.0..5.0, step: 1.0) %>
+<br><br>
+<%= f.check_box :tracked, {}, true, false %> Track beer
+<br><br>
+<%= f.submit %>
+<% end %>
+</div>
+
+</body>

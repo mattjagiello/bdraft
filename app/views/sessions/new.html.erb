@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/login.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="main">
+<h1>Login to <b>Beerdraft<b></h1>
+
+<%= form_tag sessions_path do %>
+    <%= label_tag "Username" %>
+    <%= text_field_tag :username, nil, placeholder: "Username" %>
+    <br>
+    <%= label_tag "Password" %>
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <br>
+    <%= submit_tag "Log In"%>
+</div>
+<% end %>

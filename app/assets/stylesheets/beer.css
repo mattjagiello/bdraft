@@ -1,0 +1,28 @@
+.beer_header {
+    text-align: center;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.beer_list {
+    text-align: left;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.beer_titles {
+    text-align: left;
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+a:link {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}

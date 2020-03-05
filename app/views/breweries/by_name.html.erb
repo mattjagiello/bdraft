@@ -1,0 +1,8 @@
+<h1>List of breweries by name</h1>
+
+<% breweries = Brewery.select(:id, :name).distinct%>
+<ul>
+<% breweries.each do |x| %>
+<li><%= link_to x.name, brewery_path(x.id) %></li>
+<% end %>
+</ul>

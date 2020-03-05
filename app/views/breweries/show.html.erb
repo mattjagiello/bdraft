@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/analytics.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="brewery_show_header">
+<h1><%= @brewery.name %></h1>
+<p><%= @brewery.address %><br>
+<%= @brewery.city %>, <%= @brewery.zip_code %></p><br>
+</div>
+
+<div class="brewery_show">
+Beers Sold:<% brewery = Brewery.find_by(id: @brewery) %>
+<ul><% brewery.beers.each do |beer| %>
+<li><%= link_to beer.name, beer_path(beer) %></li>
+<% end %>
+</ul>
+</div>
+
+<%= button_to "Back to Breweries", breweries_path, method: :get %>
+
+</body>

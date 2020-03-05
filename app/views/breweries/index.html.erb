@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/analytics.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+<div class="brewery_index_header">
+<h1>Find a brewery by name</h1>
+</div>
+
+<div class="brewery_index">
+<% breweries = Brewery.select(:id, :name).distinct%>
+<ul>
+<% breweries.each do |x| %>
+<li><%= link_to x.name, brewery_path(x.id) %></li>
+<% end %>
+</ul>
+</div>
+
+<%= button_to "Add New Brewery", new_brewery_path, method: :get %>
+<br>
+<%= button_to "Back to Beers", beers_path, method: :get %>

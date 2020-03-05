@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="app/assets/stylesheets/beer.css">
+    <title>Beerdraft</title>
+</head>
+<body>
+
+
+<div class = "beer_header">
+    <h1>Beers</h1>
+</div>
+
+    <div class = "beer_list">
+    <ul>
+       
+        <% @beers.each do |b| %>
+            <li>
+             <%= link_to b.name, beer_path(b) %>  <br>
+                 Brand: <%= b.brand %> <br><br>
+            </li>
+        <%end%>
+        
+     </ul>       
+    </div>
+
+
+    <div class = "beer_list">
+<h2> Top Ten Rated Beers </h2>
+   <% Beer.top_beers.each do |b| %>
+    <ul>
+        <li>
+            <%= b.name %> rated <%= b.average_rating.round %><br>
+           
+        </li>
+    </ul>
+   <% end %>
+   <%= button_to "Add a beer!", new_beer_path, method: :get %>
+  

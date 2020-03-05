@@ -1,0 +1,8 @@
+<h1>List of cities</h1>
+
+<% breweries = Brewery.select(:id, :city, :name).distinct%>
+<ul>
+<% breweries.each do |x| %>
+<li><%= x.city %></li>
+<% end %>
+</ul>
