@@ -15,7 +15,7 @@
 </div>
 
         <div class="reviewed_beers">
-            <div class="column_rev2"; >
+            
                 <b>Reviewed Beers:</b>
                 <% user_reviews = Review.where(user_id: @user)%>
                 <% beer_ids = user_reviews.select(:beer_id).distinct %>
@@ -25,7 +25,7 @@
                         <li><%= link_to beer.name, beer_path(beer) %></li>
                     <% end %>
                     </ul>
-            </div>
+           
         </div>
 
 <div class="tracked_beers">
@@ -41,17 +41,16 @@
      </ul>
 </div>
 
-<div class="column_rev2"; >
+
     <div class="new_review">
         Write a new review:
         <%= button_to "New Review", new_review_path, method: :get %>
-    </div>
+   
 </div>
 <br>
 <br>
 <br>
 
-<div class="column_rev2"; >
     <div class="user_links">
     Check out all the beers:
     <%= link_to "Beers", beers_path %> 
@@ -60,7 +59,7 @@
 
     Check out all the breweries:
     <%= link_to "Breweries", breweries_path %> <br><br>
-</div>
+
 </div>
 <br>
 <br>   

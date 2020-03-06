@@ -35,7 +35,10 @@
                         <% @beer.reviews.each do |r| %> 
                             <div class="row">
                                 <div class="column_rev"; >
-                                    User: <%= r.user_id %> <br>
+                                    User: <% uid = r.user_id %>
+                                    <% userrecord = User.find_by id: uid %>
+                                    <%= userrecord.username.capitalize %>
+                                    <br>
                                     <%= link_to "Review", review_path(r[:id]) %>:  <%= r.content %> <br>
                                     Rating:  <%= r.rating %> <br>
                                     Date: <%= r.created_at %><br>
