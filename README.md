@@ -36,7 +36,7 @@ By [Jelena Stjepanovic](https://github.com/jelenastj) and [Matt Jagiello](https:
 
 ## Interesting Notes
 
-In adding styling to the app via CSS files, we encountered a major crash that broke the Rails server from displaying any page correctly. We attempted to fix this issue via searching for common issues that others have had as well as reviewing the Rails development log, we were left without an answer of how to fix this issue. We ended up creating a new Github repo and copying over the application files and seemingly the project ended up working normally again. It is still a mystery as to what caused this major crash, but managing to recover from it was definitely a proud and relieving moment.
+In adding styling to the app via CSS files, we encountered a major crash that broke the Rails server from displaying any page correctly. While we attempted to fix this issue via searching for similar problems that others have had as well as reviewing the Rails development log, we were left without an answer of how to fix this issue. We ended up creating a new Github repo and copying over the application files and the project ended up working normally again. It is still a mystery as to what caused this major crash, but managing to recover from it was definitely a proud and relieving moment.
 
 ### What We Learned
 
