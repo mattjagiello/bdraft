@@ -1,6 +1,7 @@
 # BeerDraft :beer:
 
-A Rails based app allowing users to add beers, add breweries, and rate/review beers to add to their personal collection. By [Jelena Stjepanovic](https://github.com/jelenastj) and [Matt Jagiello](https://github.com/mattjagiello)
+A Rails based app allowing users to add beers, add breweries, and rate/review beers to add to their personal collection.
+By [Jelena Stjepanovic](https://github.com/jelenastj) and [Matt Jagiello](https://github.com/mattjagiello)
 
 ![BeerDraft splash page](https://github.com/mattjagiello/bdraft/blob/master/app/assets/images/Bdraft_User_page.png)
 
