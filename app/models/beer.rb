@@ -4,12 +4,12 @@ class Beer < ApplicationRecord
     has_many :users, through: :reviews
     has_many :breweries, through: :beer_breweries
 
-    validates :name, presence: true
-    validates :brand, presence: true, uniqueness: true
-    validates :style, presence: true
-    validates :abv, presence: true
-    validates :strength, presence: true
-    validates :likes, presence: true
+    # validates :name, presence: true
+    # validates :brand, presence: true
+    # validates :style, presence: true
+    # validates :abv, presence: true
+    # validates :strength, presence: true
+    # validates :likes, presence: true
 
     def like
         self.likes +=1

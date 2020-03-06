@@ -37,7 +37,7 @@
         <br/>
         Select Brewery
         <br>
-        <%= f.collection_check_boxes(:id, Brewery.all, :id, :name)%>
+        <%= f.collection_select(:brewery_ids, Brewery.all, :id, :name)%>
 
         <br/>
         <br/>
