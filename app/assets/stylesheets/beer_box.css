@@ -1,0 +1,83 @@
+.main {
+    float: left;
+    min-height: 180px;
+    margin: 0px;
+    padding: 20px;
+    min-width: 117px;
+    position: relative;
+}
+
+{
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 70%;
+    padding: 30px;
+    height: 640px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.column_rev {
+    flex: 50%;
+    padding: 10px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.column_rev1 {
+    flex: 40%;
+    padding: 0px;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.column_rev2 {
+    flex: 50%;
+    padding: 0px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.beer_list1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.beer_list2 {
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.beer_list4 {
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 100px;
+}
+
+.beer_list3 {
+    padding-top: 33px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+a:link {
+    color: rgb(9, 5, 5);
+}
+
+a:hover {
+    color: yellow;
+}
