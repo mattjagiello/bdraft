@@ -42,7 +42,7 @@ In adding styling to the app via CSS files, we encountered a major crash that br
 
 2. Learning how to navigate Github and commit/update to different branches has been somewhat of a challenge. We have learned  a lot about the functionality of branches and individual commits, including how to revert commits, but there is still a need for more clarity in understanding the powerful version control functionality of Git.
 
-3. We also learned about debugging and pushing through difficulties with broken code or major errors in using rails and Github. Several times we encountered major roadblocks or errors that caused us to refactor code or rollback changes that we made in the application. Even something as 'simple' as adding CSS styling pages to the application caused unfixable crashes in the Rails server. Knowing the stress of these debugging challenges and how to push past these challenges will undoubtedly be useful in our programming careers.
+3. We also learned about debugging and pushing through difficulties with broken code or major errors in using Rails and Github. Several times we encountered major roadblocks or errors that caused us to refactor code or rollback changes that we made in the application. Even something as 'simple' as adding CSS styling pages to the application caused unfixable crashes in the Rails server. Knowing the stress of these debugging challenges and how to push past these challenges will undoubtedly be useful in our programming careers.
 
 ### What We Would Change
 
