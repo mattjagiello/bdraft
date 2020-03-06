@@ -20,9 +20,10 @@
 <% bid = @review.beer_id %>
 <% beerrecord = Beer.find_by id: bid %>
 <% @beername = beerrecord.name %>
-
+<div class = "beer_list2">
 <%= link_to "Back to #{@beername} info", beer_path(@review[:beer_id])%>
 <br>
+</div>
 <%= button_to "Edit Review", edit_review_path, method: :get %>
 <%= button_to "Delete Review", review_path, method: :delete %>
 <%= button_to "Back to Beers Index", beers_path, method: :get %>

@@ -5,38 +5,49 @@
     <title>Beerdraft</title>
 </head>
 <body>
+<div class="column_rev"; >
+        <div class = "beer_list4">
+       <%= @beer.name %>
+        </div><br>
+</div>
+            <div class = "beer_list3">
+            Brand: <%= @beer.brand %> <br>
+            Type:  <%= @beer.style %> <br>
+            ABV:   <%= @beer.abv %> <br>
+            Strength: <%= @beer.strength %> <br>
+            <br>
+
+            <% if @beer.average_rating == 0 %>
+                    <p> Average Rating: Not rated yet</p>
+                <% else %> 
+                        Average Rating: <%= @beer.average_rating %> <br>
+            <% end %>
+
+            Likes: <%=@beer.likes %>  
+            <%= button_to "Like", action: "like_beer" %>
+            <br></br>
 
 
-<div class = "beer_list">
+            <div class = "beer_list4">
+                        Reviews
+                        </div>
+                        <div class = "beer_list1">
+                        <% @beer.reviews.each do |r| %> 
+                            <div class="row">
+                                <div class="column_rev"; >
+                                    User: <% uid = r.user_id %>
+                                    <% userrecord = User.find_by id: uid %>
+                                    <%= userrecord.username.capitalize %>
+                                    <br>
+                                    <%= link_to "Review", review_path(r[:id]) %>:  <%= r.content %> <br>
+                                    Rating:  <%= r.rating %> <br>
+                                    Date: <%= r.created_at %><br>
+                                </div> 
+                            </div>
+                            <br>
+                        <%end%>
+                        </div>
+                        <br><br>
 
-<h1><%= @beer.name %> </h1>
-
-   Brand: <%= @beer.brand %> <br>
-   Type:  <%= @beer.style %> <br>
-   ABV:   <%= @beer.abv %> <br>
-   Strength: <%= @beer.strength %> <br>
-   <br>
-
-   <% if @beer.average_rating == 0 %>
-        <p> Average Rating: Not rated yet</p>
-    <% else %> 
-            Average Rating: <%= @beer.average_rating %> <br>
-   <% end %>
-
-   Likes: <%=@beer.likes %>  
-   <%= button_to "Like", action: "like_beer" %>
-
-
-   <br></br>
-   <h2>Reviews </h2>
-   <% @beer.reviews.each do |r| %> <br>
-      User: <%= r.user_id %> <br>
-      <%= link_to "Content", review_path(r[:id]) %>:  <%= r.content %> <br>
-      Rating:  <%= r.rating %> <br>
-      Date: <%= r.created_at %><br>
-   <%end%>
-   
-   <br><br>
-   Back to Beer list:
-   <%= link_to "Beers", beers_path %> 
-   
+    <%= link_to "Back to Beer lists", beers_path %> 
+    

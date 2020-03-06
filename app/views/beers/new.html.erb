@@ -8,36 +8,40 @@
 <body>
 
 
-<div class = "beer_list">
-<h1>Add a beer!</h1>
+<div class = "beer_list4">
+    Add a beer!
+</div> <br>
 
-<%= form_for @beer do |f| %>
-    <%= f.label "Name:" %>
-    <%= f.text_field :name %>
-    <br/>
-    <br/>
-    <%= f.label "Brand:" %>
-    <%= f.text_field :brand %>
-    <br/>
-    <br/>
-    <%= f.label "Type:" %>
-    <%= f.text_field :style %>
-    <br/>
-    <br/>
-    <%= f.label "ABV:" %>
-    <%= f.number_field :abv, in: 4.0..12.0, step: 0.5 %>
-    <br/>
-    <br/>
-    <%= f.label "Strength:" %>
-    <%= f.text_field :strength %>
-    <br/>
-    <br/>
-    Select Brewery
-    <br>
-    <%= f.collection_check_boxes(:id, Brewery.all, :id, :name)%>
-
-    <br/>
-    <br/>
+    <div class = "beer_list2">
     
-    <%= f.submit "Add your beer!" %>
-  <% end %>
+    <%= form_for @beer do |f| %>
+        <%= f.label "Name:" %>
+        <%= f.text_field :name %>
+        <br/>
+        <br/>
+        <%= f.label "Brand:" %>
+        <%= f.text_field :brand %>
+        <br/>
+        <br/>
+        <%= f.label "Type:" %>
+        <%= f.text_field :style %>
+        <br/>
+        <br/>
+        <%= f.label "ABV:" %>
+        <%= f.number_field :abv, in: 4.0..12.0, step: 0.5 %>
+        <br/>
+        <br/>
+        <%= f.label "Strength:" %>
+        <%= f.text_field :strength %>
+        <br/>
+        <br/>
+        Select Brewery
+        <br>
+        <%= f.collection_check_boxes(:id, Brewery.all, :id, :name)%>
+
+        <br/>
+        <br/>
+        
+        <%= f.submit "Add your beer!" %>
+    <% end %>
+    </div>
