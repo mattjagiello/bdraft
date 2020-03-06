@@ -1,5 +1,4 @@
 # BeerDraft :beer:
-Beer tracking Rails application
 
 A Rails based app allowing users to add beers, add breweries, and rate/review beers to add to their personal collection. By [Jelena Stjepanovic](https://github.com/jelenastj) and [Matt Jagiello](https://github.com/mattjagiello)
 
@@ -23,7 +22,7 @@ A Rails based app allowing users to add beers, add breweries, and rate/review be
 
 ## Features
 - Password-protected user accounts saved to the local SQLite3 database via Active Record.
-- Beer information page with aggregated reviews from multiple users as well as ability to add 'likes' to beer.
+- Beer information page with aggregated reviews from multiple users as well as ability to add 'likes' to a beer.
 ![Beer information page](https://github.com/mattjagiello/bdraft/blob/master/app/assets/images/Bdraft_Beer_reviews.png)
 - CRUD functionality to add/remove/edit beer reviews from the SQLite3 database.
 ![Individual review page](https://github.com/mattjagiello/bdraft/blob/master/app/assets/images/Bdraft_User_review.png)
@@ -35,29 +34,30 @@ A Rails based app allowing users to add beers, add breweries, and rate/review be
 
 ## Interesting Notes
 
-The play_song method was difficult to wrap our heads around. Would we be able to play music back in the CLI? Did we have to open up a browser with the song URI? After some initial research, we were able to find a [homebrew](https://brew.sh/) package called [‘shpotify’](https://github.com/hnarayanan/shpotify) that was designed specifically for Spotify interaction. Once we downloaded and set it up, all we had to do was add `window(command)` in our Ruby code and we achieved playback in the Spotify desktop app! :metal:
+In adding styling to the page via CSS files, we encountered a major crash that broke the Rails server from displaying any page correctly. In attempting to fix this issue via searching for common issues that others have had as well as reviewing the Rails development log, we were left without an answer of how to fix this issue. We ended up creating a new Github repo and copying over the application files and seemingly the project ended up working normally again. It is still a mystery as to what caused this major crash, but managing to recover from it was definitely a proud and relieving moment.
 
 ### What We Learned
 
-1. While working on this project, we have learned how to best implement associations, set up models and routes, and had a brief encounter with CSS styling. All of this combined experience have been instrumental in bulding a functional website.
+1. This project taught us how to best implement associations between models in the MVC structure, setup routes associated with the controllers, and also the basics of using CSS to style our application. All of this combined experience have been instrumental in bulding a functional webapp.
 
-2. Learning how to navigate Github and commit/update is has been somewhat of a challenge. We have also learned how to revert commits, but still there's a need for more clarity dealing with keeping track with different versions. 
+2. Learning how to navigate Github and commit/update to different branches has been somewhat of a challenge. We have learned  a lot about the functionality of branches and individual commits, including how to revert commits, but there is still a need for more clarity in understanding the powerful version control functionality of Git.
 
-
+3. We also learned about debugging and pushing through difficulties with broken code or major errors in using rails and Github. Several times we encountered major roadblocks or errors that caused us to refactor code or rollback changes that we made in the application. Even something as 'simple' as adding CSS styling pages to the application caused unfixable crashes in the Rails server. Knowing the stress of these debugging challenges and how to push past these challenges will undoubtedly be useful in our programming careers.
 
 ### What We Would Change
 
-We have acomplished to set up a basic functionallity that works well with the intended purpose. It has also a good visual design with the CSS styling we were able to add. For strech goals, having ability to add beer images, and as well additional insights such as top ten for other categories would improve the user experience.
+We have accomplished the major goals of the project including creating appropriate models, methods, and analytics for the app. It has a good visual design with the CSS styling that we were able to add. For strech goals we would like to include the ability to add images of individual beers, search for breweries by city and zip code, and provide additional insights such as top ranked breweries which would provide an improved user experience.
 
 ### Code Highlight
 ```
-#The following code plays a song in spotify through a cli command and stores that song as current song.
-    if artist == nil || song == nil
-        return "Song is not in #{self.name} playlist"
-    else
-        system("spotify play #{song} #{artist}")
+#The following code creates and authenticates users based on their individual logins and encrypted password.
+  def create
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to @user
+    else  
+      redirect_to login_path
     end
-    #can also accomplish by array index no.-1
-    Song.current=(song)
-    self.display_playlist_as_table
+  end
 ```
